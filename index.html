@@ -352,7 +352,7 @@ function renderTooltip(point, matchingRows){
   const siteAddress = joinUniqueValues(matchingRows.map((row)=>row.siteAddress));
   const propertyType = joinUniqueValues(matchingRows.map((row)=>row.propertyType));
   const businessName = joinUniqueValues(matchingRows.map((row)=>row.businessName));
-  tooltipEl.innerHTML = `<strong>Parcel preview</strong><div class="tooltip-row"><span class="tooltip-label">Site Address</span>${escapeHtml(siteAddress)}</div><div class="tooltip-row"><span class="tooltip-label">Property Type</span>${escapeHtml(propertyType)}</div><div class="tooltip-row"><span class="tooltip-label">Business Name/Property Label</span>${escapeHtml(businessName)}</div>`;
+  tooltipEl.innerHTML = `<strong>Parcel preview</strong><div class="tooltip-row"><span class="tooltip-label">Site Address</span>${escapeHtml(siteAddress)}</div><div class="tooltip-row"><span class="tooltip-label">Property Type</span>${escapeHtml(propertyType)}</div><div class="tooltip-row"><span class="tooltip-label">Property Name</span>${escapeHtml(businessName)}</div>`;
   const mapRect = map.getContainer().getBoundingClientRect(); const tooltipWidth=320, tooltipHeight=130;
   let left=point.x+16, top=point.y+16;
   if(left+tooltipWidth > mapRect.width-12) left = Math.max(12, point.x-tooltipWidth-16);
@@ -373,7 +373,7 @@ function renderParcelDetails(feature, matchingRows, modeLabel){
       <div class="record-grid">
         <div><span class="field-label">Site Address</span><span class="field-value">${escapeHtml(formatValue(record.siteAddress))}</span></div>
         <div><span class="field-label">Property Type</span><span class="field-value">${escapeHtml(formatValue(record.propertyType))}</span></div>
-        <div><span class="field-label">Business Name/Property Label</span><span class="field-value">${escapeHtml(formatValue(record.businessName))}</span></div>
+        <div><span class="field-label">Property Name</span><span class="field-value">${escapeHtml(formatValue(record.businessName))}</span></div>
         <div><span class="field-label">Station</span><span class="field-value">${escapeHtml(formatValue(record.station))}</span></div>
         <div><span class="field-label">County</span><span class="field-value">${escapeHtml(formatValue(record.county))}</span></div>
         <div><span class="field-label">Design Segment</span><span class="field-value">${escapeHtml(formatValue(record.designSegment))}</span></div>
